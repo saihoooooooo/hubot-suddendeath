@@ -1,0 +1,39 @@
+# Description:
+#   >Prepare for sudden death.<
+#
+# Dependencies:
+#   "eastasianwidth": "~0.1.0"
+#
+# Configuration:
+#   None
+#
+# Commands:
+#   hubot >< <message> - Ascii art generator for sudden death.
+#
+# Notes:
+#   None
+#
+# Author:
+#   shinya.saiho
+
+eastasianwidth = require 'eastasianwidth'
+
+strpad = (str, count) ->
+  padding = ''
+  for i in [0...count]
+    padding += str
+  padding
+
+module.exports = (robot) ->
+  robot.respond />< (.*)$/i, (msg) ->
+    message = msg.match[1].replace(/^\s+|\s+$/g, '')
+    return until message.length
+
+    length = Math.floor(eastasianwidth.length(message) / 2)
+
+    suddendeath = [
+      "＿#{strpad '人', length + 2}＿"
+      "＞　#{message}　＜"
+       "￣#{strpad '^Y', length + 1}￣"
+    ]
+    msg.send suddendeath.join("\n")

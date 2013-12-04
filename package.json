@@ -1,0 +1,25 @@
+{
+  "name": "hubot-suddendeath",
+  "version": "0.0.0",
+  "author": {
+    "name": "shinya.saiho",
+    "email": "saihoooooooo@gmail.com"
+  },
+  "keywords": [
+    "hubot",
+    "suddendeath"
+  ],
+  "description": ">Prepare for sudden death.<",
+  "licenses": [{
+    "type": "MIT/X",
+    "url": "https://github.com/saihoooooooo/hubot-suddendeath/blob/master/LICENSE.md"
+  }],
+  "repository" : {
+    "type": "git",
+    "url": "https://github.com/saihoooooooo/hubot-suddendeath"
+  },
+  "main": "index.coffee",
+  "dependencies": {
+    "eastasianwidth": "~0.1.0"
+  }
+}
