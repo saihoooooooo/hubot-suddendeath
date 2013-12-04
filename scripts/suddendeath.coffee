@@ -19,10 +19,7 @@
 eastasianwidth = require 'eastasianwidth'
 
 strpad = (str, count) ->
-  padding = ''
-  for i in [0...count]
-    padding += str
-  padding
+  new Array(count + 1).join(str)
 
 module.exports = (robot) ->
   robot.respond />< (.*)$/i, (msg) ->
@@ -34,6 +31,6 @@ module.exports = (robot) ->
     suddendeath = [
       "＿#{strpad '人', length + 2}＿"
       "＞　#{message}　＜"
-       "￣#{strpad '^Y', length + 1}￣"
+      "￣#{strpad '^Y', length + 1}￣"
     ]
     msg.send suddendeath.join("\n")
