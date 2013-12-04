@@ -31,6 +31,6 @@ module.exports = (robot) ->
     suddendeath = [
       "＿#{strpad '人', length + 2}＿"
       "＞　#{message}　＜"
-      "￣#{strpad '^Y', length + 1}￣"
+      "￣Y#{strpad '^Y', length}￣"
     ]
     msg.send suddendeath.join("\n")
